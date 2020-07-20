@@ -1,27 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Docker起動
 
-Things you may want to cover:
+```bash
+$ docker-compose build
+$ docker-compose up
+```
 
-* Ruby version
+## DB作成
 
-* System dependencies
+```bash
+$ docker-compose run web rails db:create
+```
 
-* Configuration
+## Dockerfileやdocker-compose.ymlの変更を反映
 
-* Database creation
+```bash
+$ docker-compose up --build
+```
 
-* Database initialization
+## ローカルからMySQLコンテナに接続
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ mysql -u root -p -h localhost -P 3306 --protocol=tcp
+```
 
 ## 参照
 
